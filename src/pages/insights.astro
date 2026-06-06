@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LogoSymbol from '../components/LogoSymbol.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const articles = [
+  {
+    date: 'May 2025',
+    tag: 'Skilled Migration',
+    title: 'Understanding the SkillSelect Points Test: What Score Do You Actually Need in 2025?',
+    desc: 'With invitation rounds becoming increasingly competitive, we break down the current score thresholds, how occupation ceilings work, and strategies to maximise your points before submitting an EOI.',
+    readTime: '6 min read',
+  },
+  {
+    date: 'April 2025',
+    tag: 'Student Visas',
+    title: 'The GTE Requirement: How to Write a Genuine Temporary Entrant Statement That Stands Up',
+    desc: 'The Genuine Temporary Entrant criterion is one of the most misunderstood aspects of the Student Visa (Subclass 500). We explain what officers are actually assessing — and how to address it clearly.',
+    readTime: '5 min read',
+  },
+  {
+    date: 'March 2025',
+    tag: 'Partner Visas',
+    title: 'Evidence Checklist for the Partner Visa (820/801): What "Genuine Relationship" Really Means',
+    desc: 'The Department assesses your relationship across four dimensions. This guide walks through what evidence to gather, how to present it, and the common mistakes that cause delays or refusals.',
+    readTime: '7 min read',
+  },
+  {
+    date: 'February 2025',
+    tag: 'Employer Sponsored',
+    title: 'TSS (482) to Permanent Residence: Mapping Your Route Under ENS (186)',
+    desc: 'Many sponsored workers aspire to permanent residence. We explain the Temporary Residence Transition stream, eligibility requirements, employer obligations, and the timeline you should plan around.',
+    readTime: '8 min read',
+  },
+  {
+    date: 'January 2025',
+    tag: 'Skills Assessment',
+    title: 'Which Assessing Authority Covers Your Occupation? A Complete 2025 Guide',
+    desc: 'Engineers Australia, VETASSESS, AIM, TRA, ACWA, AACA — with over 30 assessing bodies in Australia, choosing the right one is the first and most important step for any points-tested visa.',
+    readTime: '5 min read',
+  },
+  {
+    date: 'December 2024',
+    tag: 'Visa Appeals',
+    title: 'Your Visa Was Refused. Now What? A Guide to AAT Appeals and Ministerial Intervention',
+    desc: 'A refusal decision does not necessarily end your migration journey. We explain the review process, who is eligible to apply to the AAT, realistic timelines, and when Ministerial Intervention may be appropriate.',
+    readTime: '9 min read',
+  },
+];
+---
+
+<Layout
+  title="Migration Insights & Guides — GEMCA Australia"
+  description="Practical migration and education guides from GEMCA's MARA registered agents. Covering skilled visas, student visas, partner visas, and more."
+>
+  <LogoSymbol />
+  <Nav />
+
+  <main id="main-content">
+    <!-- Page hero -->
+    <section class="pt-36 pb-16 bg-royal-deep relative overflow-hidden" aria-label="Insights page header">
+      <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(rgba(201,208,219,1) 1px, transparent 1px), linear-gradient(90deg, rgba(201,208,219,1) 1px, transparent 1px); background-size: 50px 50px;"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 text-center">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <span class="gold-hairline-h w-10"></span>
+          <span class="font-body text-gold text-xs tracking-[0.18em] uppercase">Insights</span>
+          <span class="gold-hairline-h w-10"></span>
+        </div>
+        <h1 class="font-display font-medium text-paper text-4xl lg:text-5xl tracking-tight mb-4">Migration Guides &amp; Updates</h1>
+        <p class="font-body text-platinum/70 text-base max-w-lg mx-auto">
+          Plain-English guides from our MARA registered agents — covering visa pathways, Department policy, and what to expect.
+        </p>
+      </div>
+    </section>
+
+    <!-- Articles grid -->
+    <section class="py-20 lg:py-28 bg-mist" aria-label="Articles">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {articles.map((a, i) => (
+            <article class="reveal glass-card-light sheen-card rounded-sm overflow-hidden group" style={`transition-delay:${i * 0.08}s`}>
+              <div class="h-44 bg-gradient-to-br from-royal/5 via-royal/10 to-royal/5 flex items-center justify-center relative">
+                <svg class="w-16 h-16 opacity-10 text-royal" aria-hidden="true"><use href="#mark-solid"/></svg>
+                <span class="absolute top-4 left-4 font-body text-[10px] tracking-[0.14em] uppercase text-royal bg-royal/10 px-2.5 py-1 rounded-sm">{a.tag}</span>
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between mb-3">
+                  <span class="font-body text-muted text-xs">{a.date}</span>
+                  <span class="font-body text-muted text-xs">{a.readTime}</span>
+                </div>
+                <h2 class="font-display font-medium text-royal-deep text-base tracking-tight leading-snug mb-3 group-hover:text-royal-light transition-colors">{a.title}</h2>
+                <p class="font-body text-muted text-xs leading-relaxed mb-4">{a.desc}</p>
+                <span class="inline-flex items-center gap-1.5 text-royal-light font-body text-xs font-medium">
+                  Coming soon
+                </span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-royal text-center" aria-label="Consultation call to action">
+      <div class="max-w-2xl mx-auto px-6">
+        <h2 class="font-display font-medium text-paper text-2xl lg:text-3xl tracking-tight mb-4">Have a question not covered here?</h2>
+        <p class="font-body text-platinum/70 text-sm mb-8">Speak directly with our MARA registered agent for advice specific to your circumstances.</p>
+        <a href="/#contact" class="inline-flex items-center gap-2 bg-paper text-royal font-body text-sm font-medium px-7 py-3 rounded-sm tracking-wide hover:bg-mist transition-colors">
+          Book a Consultation
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<script>
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          (entry.target as HTMLElement).style.opacity = '1';
+          (entry.target as HTMLElement).style.transform = 'translateY(0)';
+          (entry.target as HTMLElement).style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+  );
+  document.querySelectorAll('.reveal').forEach(el => {
+    (el as HTMLElement).style.opacity = '0';
+    (el as HTMLElement).style.transform = 'translateY(28px)';
+    revealObserver.observe(el);
+  });
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.reveal').forEach(el => {
+      (el as HTMLElement).style.opacity = '1';
+      (el as HTMLElement).style.transform = 'none';
+    });
+  }
+</script>
