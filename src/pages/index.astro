@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LogoSymbol from '../components/LogoSymbol.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import TrustStrip from '../components/TrustStrip.astro';
+import Services from '../components/Services.astro';
+import VisaExplorer from '../components/VisaExplorer.astro';
+import Pathway from '../components/Pathway.astro';
+import WhyGemca from '../components/WhyGemca.astro';
+import Insights from '../components/Insights.astro';
+import FAQ from '../components/FAQ.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<Layout>
+  <!-- SVG defs — must appear before any <use href="#mark-*"> -->
+  <LogoSymbol />
+
+  <Nav />
+  <main id="main-content">
+    <Hero />
+    <TrustStrip />
+    <Services />
+    <VisaExplorer />
+    <Pathway />
+    <WhyGemca />
+    <Insights />
+    <FAQ />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
+
+<!-- Scroll reveal + Lenis initialisation -->
+<script>
+  // Intersection Observer for .reveal elements
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          (entry.target as HTMLElement).style.opacity = '1';
+          (entry.target as HTMLElement).style.transform = 'translateY(0)';
+          (entry.target as HTMLElement).style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach(el => {
+    (el as HTMLElement).style.opacity = '0';
+    (el as HTMLElement).style.transform = 'translateY(28px)';
+    revealObserver.observe(el);
+  });
+
+  // Skip animations for users who prefer reduced motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.reveal').forEach(el => {
+      (el as HTMLElement).style.opacity = '1';
+      (el as HTMLElement).style.transform = 'none';
+    });
+  }
+</script>
+
+<!-- Lenis smooth scroll (loaded from CDN to keep bundle lean) -->
+<script type="module">
+  import Lenis from 'https://esm.sh/lenis@1.1.14';
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const lenis = new Lenis({
+      duration: 1.1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Anchor link smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        const href = anchor.getAttribute('href');
+        if (href && href.length > 1) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) lenis.scrollTo(target, { offset: -80 });
+        }
+      });
+    });
+  }
+</script>
