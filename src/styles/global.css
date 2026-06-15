@@ -118,8 +118,9 @@ body::after {
   font-weight: 500;
 }
 
-/* Scroll-reveal initial state */
-.reveal {
+/* Scroll-reveal: hidden only when JS is active (so content is always
+   visible if scripts fail to load). The reveal script adds .js to <html>. */
+.js .reveal {
   opacity: 0;
   transform: translateY(32px);
 }

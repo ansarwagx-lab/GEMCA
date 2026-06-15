@@ -34,8 +34,11 @@ import '../styles/global.css';
   <Footer />
 </Layout>
 
-<!-- Scroll reveal + Lenis initialisation -->
+<!-- Scroll reveal initialisation -->
 <script>
+  // Flag that JS is active so reveal elements may be hidden pre-animation.
+  document.documentElement.classList.add('js');
+
   // Intersection Observer for .reveal elements
   const revealObserver = new IntersectionObserver(
     (entries) => {
@@ -66,33 +69,19 @@ import '../styles/global.css';
   }
 </script>
 
-<!-- Lenis smooth scroll (loaded from CDN to keep bundle lean) -->
-<script type="module">
-  import Lenis from 'https://esm.sh/lenis@1.1.14';
-
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true,
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // Anchor link smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', (e) => {
-        const href = anchor.getAttribute('href');
-        if (href && href.length > 1) {
+<!-- Native smooth scroll for anchor links (no external dependency) -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const href = anchor.getAttribute('href');
+      if (href && href.length > 1) {
+        const target = document.querySelector(href);
+        if (target) {
           e.preventDefault();
-          const target = document.querySelector(href);
-          if (target) lenis.scrollTo(target, { offset: -80 });
+          const top = (target as HTMLElement).getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top, behavior: 'smooth' });
         }
-      });
+      }
     });
-  }
+  });
 </script>

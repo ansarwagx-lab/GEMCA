@@ -118,6 +118,8 @@ const articles = [
 </Layout>
 
 <script>
+  document.documentElement.classList.add('js');
+
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
