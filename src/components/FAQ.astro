@@ -31,8 +31,11 @@ const faqs = [
 ];
 ---
 
-<section id="faq" class="py-24 lg:py-32 bg-mist" aria-labelledby="faq-heading">
-  <div class="max-w-4xl mx-auto px-6 lg:px-10">
+<section id="faq" class="py-24 lg:py-32 relative overflow-hidden" aria-labelledby="faq-heading" style="background: linear-gradient(160deg, #F0F2F8 0%, #F5F6F9 50%, #EEF0F7 100%);">
+  <div class="absolute top-0 right-0 w-80 h-80 pointer-events-none" aria-hidden="true" style="background: radial-gradient(ellipse at top right, rgba(199,166,99,0.08) 0%, transparent 65%);"></div>
+  <div class="absolute bottom-0 left-0 w-80 h-80 pointer-events-none" aria-hidden="true" style="background: radial-gradient(ellipse at bottom left, rgba(11,42,107,0.07) 0%, transparent 65%);"></div>
+
+  <div class="max-w-4xl mx-auto px-6 lg:px-10 relative z-10">
 
     <!-- Header -->
     <div class="reveal text-center mb-14">

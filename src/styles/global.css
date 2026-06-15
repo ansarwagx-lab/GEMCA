@@ -119,25 +119,20 @@ body::after {
 }
 
 /* Scroll-reveal: content is always visible by default.
-   Animations are progressive enhancement only — added by JS via .animated class. */
+   Animations are progressive enhancement only — added by JS via .animated class.
+   IMPORTANT: never animate opacity — elements must remain visible at all times. */
 .reveal.animated {
-  animation: fadeInUp 0.7s ease both;
+  animation: slideUp 0.65s ease forwards;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(28px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes slideUp {
+  from { transform: translateY(24px); }
+  to { transform: translateY(0); }
 }
 
 /* Stagger children — visible by default, animation is progressive enhancement */
 .stagger-children > *.animated {
-  animation: fadeInUp 0.7s ease both;
+  animation: slideUp 0.65s ease forwards;
 }
 
 /* Accordion */
