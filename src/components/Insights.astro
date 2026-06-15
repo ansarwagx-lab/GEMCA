@@ -47,7 +47,7 @@ const articles = [
     <!-- Article cards -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
       {articles.map((a, i) => (
-        <article class="reveal glass-card-light sheen-card rounded-sm overflow-hidden group" style={`transition-delay:${i * 0.1}s`}>
+        <article class="reveal glass-card-light sheen-card rounded-sm overflow-hidden group border border-transparent hover:border-royal/20 transition-all duration-200" style={`transition-delay:${i * 0.1}s`}>
           <!-- Placeholder image area -->
           <div class="h-44 bg-gradient-to-br from-royal/5 via-royal/10 to-royal/5 flex items-center justify-center relative overflow-hidden">
             <svg class="w-16 h-16 opacity-10 text-royal" aria-hidden="true"><use href="#mark-solid"/></svg>

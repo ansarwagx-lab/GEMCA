@@ -77,9 +77,9 @@ const testimonials = [
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
       {testimonials.map((t, i) => (
-        <figure class="reveal glass-card-light rounded-sm p-7" style={`transition-delay:${i * 0.1}s`} aria-label={`Testimonial from ${t.name}`}>
+        <figure class="reveal glass-card-light rounded-sm p-7 border-t-2 border-gold/30" style={`transition-delay:${i * 0.1}s`} aria-label={`Testimonial from ${t.name}`}>
           <!-- Quote mark -->
-          <div class="mb-4 text-gold/30 font-display text-5xl leading-none select-none" aria-hidden="true">"</div>
+          <div class="mb-4 text-gold font-display text-6xl leading-none select-none" aria-hidden="true">"</div>
           <blockquote class="font-body text-ink/75 text-sm leading-relaxed mb-5">
             "{t.quote}"
           </blockquote>

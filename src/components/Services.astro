@@ -61,7 +61,7 @@ const services = [
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {services.map((s, i) => (
         <article
-          class="reveal glass-card-light sheen-card rounded-sm p-7 group cursor-default"
+          class="reveal glass-card-light sheen-card rounded-sm p-8 group cursor-default border-l-2 border-royal-light/60 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
           style={`transition-delay:${i * 0.07}s`}
           aria-label={s.title}
         >
@@ -75,7 +75,7 @@ const services = [
           <!-- Content -->
           <div class="mb-3">
             <span class="inline-block font-body text-gold-deep text-[10px] tracking-[0.14em] uppercase mb-1.5">{s.subclass}</span>
-            <h3 class="font-display font-medium text-royal-deep text-lg tracking-tight">{s.title}</h3>
+            <h3 class="font-display font-medium text-royal-deep text-xl tracking-tight">{s.title}</h3>
           </div>
           <p class="font-body text-muted text-sm leading-relaxed">{s.desc}</p>
 

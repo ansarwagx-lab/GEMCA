@@ -36,17 +36,14 @@ import '../styles/global.css';
 
 <!-- Scroll reveal initialisation -->
 <script>
-  // Flag that JS is active so reveal elements may be hidden pre-animation.
-  document.documentElement.classList.add('js');
-
   // Intersection Observer for .reveal elements
+  // Content is ALWAYS visible — .animated class adds the fadeInUp animation
+  // only for elements entering the viewport (progressive enhancement only).
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          (entry.target as HTMLElement).style.opacity = '1';
-          (entry.target as HTMLElement).style.transform = 'translateY(0)';
-          (entry.target as HTMLElement).style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+          entry.target.classList.add('animated');
           revealObserver.unobserve(entry.target);
         }
       });
@@ -55,18 +52,8 @@ import '../styles/global.css';
   );
 
   document.querySelectorAll('.reveal').forEach(el => {
-    (el as HTMLElement).style.opacity = '0';
-    (el as HTMLElement).style.transform = 'translateY(28px)';
     revealObserver.observe(el);
   });
-
-  // Skip animations for users who prefer reduced motion
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.reveal').forEach(el => {
-      (el as HTMLElement).style.opacity = '1';
-      (el as HTMLElement).style.transform = 'none';
-    });
-  }
 </script>
 
 <!-- Native smooth scroll for anchor links (no external dependency) -->

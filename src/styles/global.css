@@ -21,7 +21,7 @@
 }
 
 html {
-  scroll-behavior: auto; /* Lenis handles smooth scroll */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -54,7 +54,7 @@ body::after {
 }
 
 .glass-card-light {
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(201, 208, 219, 0.5);
@@ -118,23 +118,26 @@ body::after {
   font-weight: 500;
 }
 
-/* Scroll-reveal: hidden only when JS is active (so content is always
-   visible if scripts fail to load). The reveal script adds .js to <html>. */
-.js .reveal {
-  opacity: 0;
-  transform: translateY(32px);
+/* Scroll-reveal: content is always visible by default.
+   Animations are progressive enhancement only — added by JS via .animated class. */
+.reveal.animated {
+  animation: fadeInUp 0.7s ease both;
 }
 
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Stagger children */
-.stagger-children > * {
-  opacity: 0;
-  transform: translateY(24px);
+/* Stagger children — visible by default, animation is progressive enhancement */
+.stagger-children > *.animated {
+  animation: fadeInUp 0.7s ease both;
 }
 
 /* Accordion */
@@ -195,10 +198,5 @@ body::after {
   *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
-  }
-  .reveal,
-  .stagger-children > * {
-    opacity: 1;
-    transform: none;
   }
 }

@@ -49,7 +49,7 @@ const faqs = [
     <!-- Accordion -->
     <div class="space-y-3" role="list">
       {faqs.map((faq, i) => (
-        <div class="reveal glass-card-light rounded-sm overflow-hidden" style={`transition-delay:${i * 0.05}s`} role="listitem">
+        <div class={`reveal glass-card-light rounded-sm overflow-hidden ${i % 2 === 0 ? 'odd-faq' : 'even-faq'}`} style={`transition-delay:${i * 0.05}s; ${i % 2 !== 0 ? 'background: rgba(255,255,255,0.95)' : 'background: rgba(245,246,249,0.85)'}`} role="listitem">
           <button
             class="accordion-btn w-full flex items-center justify-between gap-4 px-7 py-5 text-left"
             aria-expanded="false"
