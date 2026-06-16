@@ -75,11 +75,12 @@ h1,h2,h3,h4{font-family:var(--f-head);font-weight:800;line-height:1.08;letter-sp
 .nav.scrolled{padding:10px 0;background:rgba(11,22,40,.82);backdrop-filter:blur(18px) saturate(150%);box-shadow:0 1px 0 rgba(255,255,255,.06),0 10px 40px rgba(0,0,0,.25);}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--maxw);margin:0 auto;padding:0 28px;}
 .brand{display:flex;align-items:center;gap:13px;}
-.brand-mark{width:46px;height:46px;flex-shrink:0;transition:transform .4s ease;}
-.brand:hover .brand-mark{transform:scale(1.06) rotate(-2deg);}
+.brand-mark{width:42px;height:52px;flex-shrink:0;transition:transform .55s cubic-bezier(.22,.61,.36,1);}
+.brand:hover .brand-mark{transform:translateY(-2px) scale(1.03);}
 .brand-text{display:flex;flex-direction:column;line-height:1;}
-.brand-name{font-family:var(--f-head);font-weight:800;font-size:1.42rem;color:#fff;letter-spacing:.04em;}
-.brand-sub{font-family:var(--f-body);font-weight:400;font-size:.58rem;letter-spacing:.2em;color:rgba(255,255,255,.6);margin-top:5px;text-transform:uppercase;}
+.brand-rule{width:100%;height:1px;background:linear-gradient(90deg,rgba(212,175,55,.6),rgba(212,175,55,.15));margin:5px 0 4px;}
+.brand-name{font-family:var(--f-head);font-weight:800;font-size:1.3rem;color:#fff;letter-spacing:.16em;text-transform:uppercase;}
+.brand-sub{font-family:var(--f-body);font-weight:400;font-size:.5rem;letter-spacing:.28em;color:rgba(255,255,255,.5);text-transform:uppercase;}
 .nav-links{display:flex;align-items:center;gap:34px;}
 .nav-link{font-size:.9rem;font-weight:500;color:rgba(255,255,255,.82);position:relative;transition:color .25s;}
 .nav-link::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1.5px;background:var(--gold-400);transition:width .3s ease;}
@@ -392,15 +393,34 @@ h1,h2,h3,h4{font-family:var(--f-head);font-weight:800;line-height:1.08;letter-sp
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="#top" class="brand" aria-label="GEMCA Home">
-      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-        <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#lg1)"/>
-        <path d="M33 18.5C31.4 16 28.6 14.5 25.3 14.5C20 14.5 16 18.7 16 24C16 29.3 20 33.5 25.3 33.5C29.8 33.5 33 30.7 33.6 26.5H25.5V23H37V24.5C37 31.6 31.8 37 25.3 37C17.8 37 12 31.2 12 24C12 16.8 17.8 11 25.3 11C29.8 11 33.6 13 36 16.2L33 18.5Z" fill="#fff"/>
-        <circle cx="35" cy="14" r="2.5" fill="#D4AF37"/>
-        <defs><linearGradient id="lg1" x1="2" y1="2" x2="46" y2="46"><stop stop-color="#0a6b5a"/><stop offset="1" stop-color="#0b1628"/></linearGradient></defs>
+      <svg class="brand-mark" viewBox="0 0 54 66" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="sh-body" x1="27" y1="0" x2="27" y2="66" gradientUnits="userSpaceOnUse"><stop stop-color="#053b32"/><stop offset="0.55" stop-color="#091525"/><stop offset="1" stop-color="#060d1f"/></linearGradient>
+          <linearGradient id="sh-gold" x1="0" y1="0" x2="54" y2="66" gradientUnits="userSpaceOnUse"><stop stop-color="#f2e080"/><stop offset="0.5" stop-color="#d4af37"/><stop offset="1" stop-color="#9a7020"/></linearGradient>
+        </defs>
+        <!-- Shield body -->
+        <path d="M2 2L52 2L52 40Q52 63 27 66Q2 63 2 40Z" fill="url(#sh-body)"/>
+        <!-- Outer gold border -->
+        <path d="M2 2L52 2L52 40Q52 63 27 66Q2 63 2 40Z" fill="none" stroke="url(#sh-gold)" stroke-width="1.6"/>
+        <!-- Inner fine gold frame -->
+        <path d="M6.5 6.5L47.5 6.5L47.5 40Q47.5 58.5 27 62Q6.5 58.5 6.5 40Z" fill="none" stroke="rgba(212,175,55,.28)" stroke-width="0.6"/>
+        <!-- Horizontal crest divider -->
+        <line x1="2" y1="22" x2="52" y2="22" stroke="rgba(212,175,55,.2)" stroke-width="0.5"/>
+        <!-- Three heraldic lozenges in crest band -->
+        <path d="M13 14L15.5 11L18 14L15.5 17Z" fill="rgba(212,175,55,.78)"/>
+        <path d="M24.5 12.5L27 10.5L29.5 12.5L27 14.5Z" fill="rgba(212,175,55,.48)"/>
+        <path d="M36 14L38.5 11L41 14L38.5 17Z" fill="rgba(212,175,55,.78)"/>
+        <!-- Fine rule above letterform -->
+        <line x1="13" y1="29" x2="41" y2="29" stroke="rgba(212,175,55,.18)" stroke-width="0.5"/>
+        <!-- Classical G letterform -->
+        <text x="27" y="56" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="30" fill="url(#sh-gold)" font-weight="400">G</text>
+        <!-- Fine rule below letterform -->
+        <line x1="15" y1="59.5" x2="39" y2="59.5" stroke="rgba(212,175,55,.22)" stroke-width="0.5"/>
       </svg>
       <span class="brand-text">
         <span class="brand-name">GEMCA</span>
-        <span class="brand-sub">Education &amp; Migration · Australia</span>
+        <span class="brand-rule"></span>
+        <span class="brand-sub">Migration &amp; Education · Australia</span>
       </span>
     </a>
     <div class="nav-links">
@@ -504,6 +524,66 @@ h1,h2,h3,h4{font-family:var(--f-head);font-weight:800;line-height:1.08;letter-sp
     </div>
   </div>
 </section>
+
+<!-- FULL LOGO SHOWCASE -->
+<div class="logoshowcase">
+  <div class="ls-inner reveal">
+    <svg class="ls-shield" viewBox="0 0 120 148" fill="none" aria-label="GEMCA heraldic shield">
+      <defs>
+        <linearGradient id="lss-body" x1="60" y1="0" x2="60" y2="148" gradientUnits="userSpaceOnUse"><stop stop-color="#053b32"/><stop offset="0.5" stop-color="#091525"/><stop offset="1" stop-color="#040c1a"/></linearGradient>
+        <linearGradient id="lss-gold" x1="0" y1="0" x2="120" y2="148" gradientUnits="userSpaceOnUse"><stop stop-color="#f6ea94"/><stop offset="0.45" stop-color="#d4af37"/><stop offset="1" stop-color="#8a6414"/></linearGradient>
+        <linearGradient id="lss-gold2" x1="0" y1="0" x2="120" y2="148" gradientUnits="userSpaceOnUse"><stop stop-color="#e8d060"/><stop offset="1" stop-color="#c9a84c"/></linearGradient>
+      </defs>
+      <!-- Shield body -->
+      <path d="M4 4L116 4L116 90Q116 138 60 146Q4 138 4 90Z" fill="url(#lss-body)"/>
+      <!-- Outer gold border -->
+      <path d="M4 4L116 4L116 90Q116 138 60 146Q4 138 4 90Z" fill="none" stroke="url(#lss-gold)" stroke-width="3"/>
+      <!-- Inner thin gold frame -->
+      <path d="M12 12L108 12L108 90Q108 128 60 138Q12 128 12 90Z" fill="none" stroke="rgba(212,175,55,.3)" stroke-width="1"/>
+      <!-- Second inner thin frame -->
+      <path d="M17 17L103 17L103 90Q103 122 60 131Q17 122 17 90Z" fill="none" stroke="rgba(212,175,55,.14)" stroke-width="0.6"/>
+      <!-- Horizontal crest divider -->
+      <line x1="4" y1="48" x2="116" y2="48" stroke="rgba(212,175,55,.25)" stroke-width="0.8"/>
+      <!-- Fine rule 2px below that -->
+      <line x1="4" y1="51" x2="116" y2="51" stroke="rgba(212,175,55,.1)" stroke-width="0.4"/>
+      <!-- Five heraldic lozenges in upper crest band -->
+      <path d="M26 30L30 25L34 30L30 35Z" fill="rgba(212,175,55,.85)"/>
+      <path d="M48 28L52 24L56 28L52 32Z" fill="rgba(212,175,55,.55)"/>
+      <path d="M57 26.5L60 23.5L63 26.5L60 29.5Z" fill="rgba(212,175,55,.4)"/>
+      <path d="M64 28L68 24L72 28L68 32Z" fill="rgba(212,175,55,.55)"/>
+      <path d="M86 30L90 25L94 30L90 35Z" fill="rgba(212,175,55,.85)"/>
+      <!-- Fine horizontal rule above G -->
+      <line x1="26" y1="64" x2="94" y2="64" stroke="rgba(212,175,55,.2)" stroke-width="0.6"/>
+      <!-- Classical G letterform - large -->
+      <text x="60" y="122" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="68" fill="url(#lss-gold2)" font-weight="400">G</text>
+      <!-- Fine horizontal rule below G -->
+      <line x1="30" y1="130" x2="90" y2="130" stroke="rgba(212,175,55,.22)" stroke-width="0.6"/>
+      <!-- Est. text -->
+      <text x="60" y="140" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="8" fill="rgba(212,175,55,.5)" font-weight="400" letter-spacing="3">EST.</text>
+    </svg>
+    <div class="ls-wordmark">
+      <div class="ls-rule ls-rule-top"></div>
+      <div class="ls-name">GEMCA</div>
+      <div class="ls-rule"></div>
+      <div class="ls-fullname">Goraya Education &amp; Migration<br>Consultant Australia</div>
+      <div class="ls-rule ls-rule-thin"></div>
+      <div class="ls-tagline">MARA Registered Migration Agent &nbsp;·&nbsp; Est. MMXII &nbsp;·&nbsp; ABN 96&nbsp;695&nbsp;178&nbsp;744</div>
+    </div>
+  </div>
+</div>
+<style>
+.logoshowcase{background:var(--navy-900);padding:70px 0;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);}
+.ls-inner{display:flex;align-items:center;justify-content:center;gap:44px;max-width:760px;margin:0 auto;padding:0 28px;flex-wrap:wrap;}
+.ls-shield{width:120px;height:148px;flex-shrink:0;filter:drop-shadow(0 20px 50px rgba(10,107,90,.35));}
+.ls-wordmark{display:flex;flex-direction:column;align-items:flex-start;gap:0;}
+.ls-name{font-family:var(--f-head);font-weight:800;font-size:clamp(2.8rem,6vw,4.2rem);color:#fff;letter-spacing:.18em;line-height:1;text-transform:uppercase;}
+.ls-fullname{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(.9rem,1.2vw,1.05rem);color:rgba(255,255,255,.75);letter-spacing:.06em;line-height:1.5;margin:10px 0 12px;}
+.ls-tagline{font-family:var(--f-body);font-weight:400;font-size:.68rem;color:rgba(212,175,55,.65);letter-spacing:.18em;text-transform:uppercase;}
+.ls-rule{width:100%;height:1px;background:linear-gradient(90deg,rgba(212,175,55,.7),rgba(212,175,55,.2),transparent);margin:10px 0;}
+.ls-rule.ls-rule-top{margin-top:2px;}
+.ls-rule.ls-rule-thin{background:linear-gradient(90deg,rgba(212,175,55,.3),rgba(212,175,55,.08),transparent);margin:8px 0;}
+@media(max-width:520px){.ls-inner{gap:28px;}.ls-shield{width:88px;height:108px;}.ls-name{font-size:2rem;}}
+</style>
 
 <!-- ABOUT -->
 <section class="section about" id="about">
@@ -833,13 +913,23 @@ h1,h2,h3,h4{font-family:var(--f-head);font-weight:800;line-height:1.08;letter-sp
     <div class="foot-grid">
       <div class="foot-brand">
         <a href="#top" class="brand">
-          <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-            <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#lg2)"/>
-            <path d="M33 18.5C31.4 16 28.6 14.5 25.3 14.5C20 14.5 16 18.7 16 24C16 29.3 20 33.5 25.3 33.5C29.8 33.5 33 30.7 33.6 26.5H25.5V23H37V24.5C37 31.6 31.8 37 25.3 37C17.8 37 12 31.2 12 24C12 16.8 17.8 11 25.3 11C29.8 11 33.6 13 36 16.2L33 18.5Z" fill="#fff"/>
-            <circle cx="35" cy="14" r="2.5" fill="#D4AF37"/>
-            <defs><linearGradient id="lg2" x1="2" y1="2" x2="46" y2="46"><stop stop-color="#0a6b5a"/><stop offset="1" stop-color="#0b1628"/></linearGradient></defs>
+          <svg class="brand-mark" viewBox="0 0 54 66" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="sh-body2" x1="27" y1="0" x2="27" y2="66" gradientUnits="userSpaceOnUse"><stop stop-color="#053b32"/><stop offset="0.55" stop-color="#091525"/><stop offset="1" stop-color="#060d1f"/></linearGradient>
+              <linearGradient id="sh-gold2" x1="0" y1="0" x2="54" y2="66" gradientUnits="userSpaceOnUse"><stop stop-color="#f2e080"/><stop offset="0.5" stop-color="#d4af37"/><stop offset="1" stop-color="#9a7020"/></linearGradient>
+            </defs>
+            <path d="M2 2L52 2L52 40Q52 63 27 66Q2 63 2 40Z" fill="url(#sh-body2)"/>
+            <path d="M2 2L52 2L52 40Q52 63 27 66Q2 63 2 40Z" fill="none" stroke="url(#sh-gold2)" stroke-width="1.6"/>
+            <path d="M6.5 6.5L47.5 6.5L47.5 40Q47.5 58.5 27 62Q6.5 58.5 6.5 40Z" fill="none" stroke="rgba(212,175,55,.28)" stroke-width="0.6"/>
+            <line x1="2" y1="22" x2="52" y2="22" stroke="rgba(212,175,55,.2)" stroke-width="0.5"/>
+            <path d="M13 14L15.5 11L18 14L15.5 17Z" fill="rgba(212,175,55,.78)"/>
+            <path d="M24.5 12.5L27 10.5L29.5 12.5L27 14.5Z" fill="rgba(212,175,55,.48)"/>
+            <path d="M36 14L38.5 11L41 14L38.5 17Z" fill="rgba(212,175,55,.78)"/>
+            <line x1="13" y1="29" x2="41" y2="29" stroke="rgba(212,175,55,.18)" stroke-width="0.5"/>
+            <text x="27" y="56" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="30" fill="url(#sh-gold2)" font-weight="400">G</text>
+            <line x1="15" y1="59.5" x2="39" y2="59.5" stroke="rgba(212,175,55,.22)" stroke-width="0.5"/>
           </svg>
-          <span class="brand-text"><span class="brand-name">GEMCA</span><span class="brand-sub">Education &amp; Migration · Australia</span></span>
+          <span class="brand-text"><span class="brand-name">GEMCA</span><span class="brand-rule"></span><span class="brand-sub">Migration &amp; Education · Australia</span></span>
         </a>
         <p>Goraya Education &amp; Migration Consultant Australia — strategic, MARA-registered migration and education advisory for ambitious individuals, families and businesses.</p>
         <div class="foot-cred"><span>MARA Registered</span><span>ABN 96 695 178 744</span><span>Privacy Act 1988</span></div>
