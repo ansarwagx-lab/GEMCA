@@ -1,0 +1,108 @@
+---
+const reasons = [
+  {
+    title: 'MARA Registered Agent',
+    desc: 'Ansar Goraya is registered with the Migration Agents Registration Authority. You receive the full protection of the MARA Code of Conduct — including confidentiality, honesty, and professional-standard advice.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`,
+  },
+  {
+    title: 'Plain-English Advice',
+    desc: 'We translate Department of Home Affairs requirements into clear, actionable steps. No confusing acronyms, no false promises — just honest guidance calibrated to your situation.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>`,
+  },
+  {
+    title: 'End-to-End Handling',
+    desc: 'From initial assessment through skills assessment, EOI, nomination, lodgement, and post-decision — we manage every step, communicate with the Department on your behalf, and keep you informed.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>`,
+  },
+  {
+    title: 'Confidential & Secure',
+    desc: 'Your personal information is handled under the Privacy Act 1988. We maintain strict confidentiality about your circumstances, your documents, and your migration strategy.',
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>`,
+  },
+];
+
+const testimonials = [
+  {
+    name: 'Rajpreet S.',
+    visa: 'Subclass 190 — Skilled Nominated',
+    quote: 'Ansar guided me through every step of my 190 nomination. His knowledge of the points system was invaluable — I wouldn\'t have known which occupation to target without his advice.',
+  },
+  {
+    name: 'Amira M.',
+    visa: 'Subclass 500 — Student Visa',
+    quote: 'From choosing my institution to preparing my GTE statement, GEMCA made the entire process straightforward. I felt confident because everything was explained clearly at every stage.',
+  },
+  {
+    name: 'Kofi & Theresa',
+    visa: 'Subclass 820/801 — Partner Visa',
+    quote: 'Applying as a couple from two different countries felt overwhelming. GEMCA organised all our evidence methodically and kept us calm throughout a complex process. We\'re now permanent residents.',
+  },
+];
+---
+
+<section id="about" class="py-24 lg:py-32 bg-mist relative overflow-hidden" aria-labelledby="about-heading">
+  <!-- Subtle decorative radial glow -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-48 pointer-events-none" aria-hidden="true" style="background: radial-gradient(ellipse at top center, rgba(199,166,99,0.08) 0%, transparent 70%);"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- Why GEMCA -->
+    <div class="reveal text-center mb-16">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="gold-hairline-h w-10"></span>
+        <span class="font-body text-gold text-xs tracking-[0.18em] uppercase">Why Choose Us</span>
+        <span class="gold-hairline-h w-10"></span>
+      </div>
+      <h2 id="about-heading" class="font-display font-medium text-royal-deep text-3xl lg:text-5xl tracking-tight mb-4">
+        Registered. Experienced.<br class="hidden lg:block"/> Committed to Your Outcome.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-20">
+      {reasons.map((r, i) => (
+        <div class="reveal rounded-sm p-7 flex gap-5 border border-line/60 hover:border-royal/30 transition-colors duration-300" style={`transition-delay:${i * 0.08}s; background: rgba(255,255,255,0.9); box-shadow: 0 2px 12px rgba(11,42,107,0.06);`}>
+          <div class="w-12 h-12 rounded-sm flex items-center justify-center flex-shrink-0 mt-0.5" style="background: rgba(11,42,107,0.08);">
+            <svg class="w-6 h-6 text-royal" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" set:html={r.icon}/>
+          </div>
+          <div>
+            <h3 class="font-display font-medium text-royal-deep text-base tracking-tight mb-2">{r.title}</h3>
+            <p class="font-body text-muted text-sm leading-relaxed">{r.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Testimonials -->
+    <div class="reveal text-center mb-10">
+      <h3 class="font-display font-medium text-royal-deep text-2xl lg:text-3xl tracking-tight">Client Experiences</h3>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      {testimonials.map((t, i) => (
+        <figure class="reveal rounded-sm p-7 border-t-[3px] border-gold" style={`transition-delay:${i * 0.1}s; background: rgba(255,255,255,0.95); box-shadow: 0 4px 24px rgba(11,42,107,0.08);`} aria-label={`Testimonial from ${t.name}`}>
+          <!-- Quote mark -->
+          <div class="mb-4 font-display text-6xl leading-none select-none" style="color: #C7A663;" aria-hidden="true">"</div>
+          <blockquote class="font-body text-ink/75 text-sm leading-relaxed mb-5">
+            "{t.quote}"
+          </blockquote>
+          <figcaption>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-royal/10 flex items-center justify-center">
+                <span class="font-display font-medium text-royal text-xs">{t.name.charAt(0)}</span>
+              </div>
+              <div>
+                <div class="font-body text-ink text-sm font-medium">{t.name}</div>
+                <div class="font-body text-muted text-[11px] tracking-wide">{t.visa}</div>
+              </div>
+            </div>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+
+    <p class="reveal text-center font-body text-muted/60 text-xs mt-6">
+      Past results are not an indication of future outcomes. All visa grants are subject to eligibility and Department of Home Affairs requirements.
+    </p>
+  </div>
+</section>

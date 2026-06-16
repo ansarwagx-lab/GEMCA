@@ -1,0 +1,87 @@
+---
+const articles = [
+  {
+    date: 'May 2025',
+    tag: 'Skilled Migration',
+    title: 'Understanding the SkillSelect Points Test: What Score Do You Actually Need in 2025?',
+    desc: 'With invitation rounds becoming increasingly competitive, we break down the current score thresholds, how occupation ceilings work, and strategies to maximise your points before submitting an EOI.',
+    readTime: '6 min read',
+  },
+  {
+    date: 'April 2025',
+    tag: 'Student Visas',
+    title: 'The GTE Requirement: How to Write a Genuine Temporary Entrant Statement That Stands Up',
+    desc: 'The Genuine Temporary Entrant criterion is one of the most misunderstood aspects of the Student Visa (Subclass 500). We explain what officers are actually assessing — and how to address it clearly.',
+    readTime: '5 min read',
+  },
+  {
+    date: 'March 2025',
+    tag: 'Partner Visas',
+    title: 'Evidence Checklist for the Partner Visa (820/801): What "Genuine Relationship" Really Means',
+    desc: 'The Department assesses your relationship across four dimensions. This guide walks through what evidence to gather, how to present it, and the common mistakes that cause delays or refusals.',
+    readTime: '7 min read',
+  },
+];
+---
+
+<section id="insights" class="py-24 lg:py-32 relative overflow-hidden" aria-labelledby="insights-heading" style="background: linear-gradient(160deg, #EBF0FA 0%, #F3F5FB 50%, #E8EDF8 100%);">
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" aria-hidden="true"></div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+
+    <!-- Header -->
+    <div class="reveal flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="gold-hairline-h w-10"></span>
+          <span class="font-body text-gold text-xs tracking-[0.18em] uppercase">Insights</span>
+        </div>
+        <h2 id="insights-heading" class="font-display font-medium text-royal-deep text-3xl lg:text-4xl tracking-tight">
+          Migration Guides &amp; Updates
+        </h2>
+      </div>
+      <a href="/insights" class="flex-shrink-0 inline-flex items-center gap-2 border border-line text-muted hover:text-royal hover:border-royal font-body text-sm px-5 py-2.5 rounded-sm tracking-wide transition-all duration-200">
+        All Articles
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+    <!-- Article cards -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      {articles.map((a, i) => (
+        <article class="reveal rounded-sm overflow-hidden group border border-line/50 hover:border-royal/30 hover:-translate-y-1 transition-all duration-300" style={`transition-delay:${i * 0.1}s; background: white; box-shadow: 0 4px 20px rgba(11,42,107,0.08);`}>
+          <!-- Article image area — rich gradient -->
+          <div class="h-48 relative overflow-hidden flex items-end" style={`background: linear-gradient(135deg, #05143a 0%, #0B2A6B 60%, #1a3a8f 100%);`}>
+            <!-- Background pattern -->
+            <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(rgba(201,208,219,1) 1px, transparent 1px), linear-gradient(90deg, rgba(201,208,219,1) 1px, transparent 1px); background-size: 32px 32px;"></div>
+            <!-- Large decorative G -->
+            <div class="absolute right-4 top-1/2 -translate-y-1/2 opacity-[0.07]">
+              <svg class="w-32 h-32 text-white" aria-hidden="true"><use href="#mark-solid"/></svg>
+            </div>
+            <!-- Gold accent line -->
+            <div class="absolute top-0 left-0 right-0 h-[3px]" style="background: linear-gradient(90deg, transparent, #C7A663 30%, #C7A663 70%, transparent);"></div>
+            <!-- Tag + category -->
+            <div class="relative z-10 p-5 w-full">
+              <span class="inline-block font-body text-[10px] tracking-[0.16em] uppercase px-2.5 py-1 rounded-sm mb-2" style="color:#C7A663; background: rgba(199,166,99,0.18);">{a.tag}</span>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-body text-muted text-xs">{a.date}</span>
+              <span class="font-body text-muted text-xs">{a.readTime}</span>
+            </div>
+            <h3 class="font-display font-medium text-royal-deep text-base tracking-tight leading-snug mb-3 group-hover:text-royal-light transition-colors duration-200">
+              {a.title}
+            </h3>
+            <p class="font-body text-muted text-xs leading-relaxed mb-4 line-clamp-3">{a.desc}</p>
+            <span class="inline-flex items-center gap-1.5 text-royal-light font-body text-xs font-medium group-hover:gap-2.5 transition-all duration-200">
+              Read article
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

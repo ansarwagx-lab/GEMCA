@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LogoSymbol from '../components/LogoSymbol.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import TrustStrip from '../components/TrustStrip.astro';
+import Services from '../components/Services.astro';
+import VisaExplorer from '../components/VisaExplorer.astro';
+import Pathway from '../components/Pathway.astro';
+import WhyGemca from '../components/WhyGemca.astro';
+import Insights from '../components/Insights.astro';
+import FAQ from '../components/FAQ.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<Layout>
+  <!-- SVG defs — must appear before any <use href="#mark-*"> -->
+  <LogoSymbol />
+
+  <Nav />
+  <main id="main-content">
+    <Hero />
+    <TrustStrip />
+    <Services />
+    <VisaExplorer />
+    <Pathway />
+    <WhyGemca />
+    <Insights />
+    <FAQ />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
+
+<!-- Scroll reveal initialisation -->
+<script>
+  // Intersection Observer for .reveal elements
+  // Content is ALWAYS visible — .animated class adds the fadeInUp animation
+  // only for elements entering the viewport (progressive enhancement only).
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: '0px 0px -60px 0px' }
+  );
+
+  document.querySelectorAll('.reveal').forEach(el => {
+    revealObserver.observe(el);
+  });
+</script>
+
+<!-- Native smooth scroll for anchor links (no external dependency) -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const href = anchor.getAttribute('href');
+      if (href && href.length > 1) {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          const top = (target as HTMLElement).getBoundingClientRect().top + window.scrollY - 80;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      }
+    });
+  });
+</script>

@@ -1,0 +1,103 @@
+---
+const faqs = [
+  {
+    q: 'How do I know which visa is right for me?',
+    a: 'The right visa depends on your occupation, qualifications, English proficiency, age, family situation, sponsorship availability, and intended state of residence. Our assessment covers all of these factors and maps them to the visa subclasses you\'re eligible for — including any pathways you may not have considered. Book a consultation to get a clear picture.',
+  },
+  {
+    q: 'How long does the visa process typically take?',
+    a: 'Processing times vary significantly by visa type. Partner visas currently take 12–28 months; skilled independent (189) can be 12–18 months after invitation; student visas are often processed within 4–8 weeks. Employer-sponsored visas (482) are typically 3–6 months. We provide realistic timelines specific to your visa and current Department processing queues at the outset of your engagement.',
+  },
+  {
+    q: 'Do I need a migration agent, or can I apply myself?',
+    a: 'You can apply directly, but MARA registered agents provide important protections: accurate advice, professional responsibility, and accountability under a Code of Conduct. For complex applications — points-tested visas, partner visas, AAT appeals, or any case with complications — professional representation significantly reduces the risk of refusal or delay.',
+  },
+  {
+    q: 'What documents will I need to prepare?',
+    a: 'Required documents depend entirely on your visa type. Broadly, most applications involve identity documents (passport, birth certificate), qualifications, employment records, skills assessment outcomes, English language test results, health examinations, and police clearances. We provide you with a tailored document checklist and review everything before lodgement.',
+  },
+  {
+    q: 'How are your fees structured?',
+    a: 'Our fees are transparent and agreed in a Client Agreement before we begin any work. They vary by visa type and complexity. Government visa application charges (paid directly to the Department of Home Affairs) are separate and will be clearly outlined. Contact us for a fee outline specific to your situation.',
+  },
+  {
+    q: 'What happens if my visa application is refused?',
+    a: 'A refusal is not necessarily the end of your migration journey. Depending on the visa type and grounds for refusal, you may be able to appeal to the Administrative Appeals Tribunal (AAT), request Ministerial Intervention, or lodge a fresh application with strengthened evidence. We assist with all of these options and will advise honestly on the merits of each path.',
+  },
+  {
+    q: 'Is my information kept confidential?',
+    a: 'Yes. All client information is handled in strict confidence under the MARA Code of Conduct and the Privacy Act 1988. We do not share your information with any third party without your explicit consent, except where required by law or the Department of Home Affairs in the course of your application.',
+  },
+];
+---
+
+<section id="faq" class="py-24 lg:py-32 relative overflow-hidden" aria-labelledby="faq-heading" style="background: linear-gradient(160deg, #F0F2F8 0%, #F5F6F9 50%, #EEF0F7 100%);">
+  <div class="absolute top-0 right-0 w-80 h-80 pointer-events-none" aria-hidden="true" style="background: radial-gradient(ellipse at top right, rgba(199,166,99,0.08) 0%, transparent 65%);"></div>
+  <div class="absolute bottom-0 left-0 w-80 h-80 pointer-events-none" aria-hidden="true" style="background: radial-gradient(ellipse at bottom left, rgba(11,42,107,0.07) 0%, transparent 65%);"></div>
+
+  <div class="max-w-4xl mx-auto px-6 lg:px-10 relative z-10">
+
+    <!-- Header -->
+    <div class="reveal text-center mb-14">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="gold-hairline-h w-10"></span>
+        <span class="font-body text-gold text-xs tracking-[0.18em] uppercase">FAQ</span>
+        <span class="gold-hairline-h w-10"></span>
+      </div>
+      <h2 id="faq-heading" class="font-display font-medium text-royal-deep text-3xl lg:text-4xl tracking-tight">
+        Common Questions
+      </h2>
+    </div>
+
+    <!-- Accordion -->
+    <div class="space-y-3" role="list">
+      {faqs.map((faq, i) => (
+        <div class="reveal rounded-sm overflow-hidden border-l-[3px] border-transparent faq-item" style={`transition-delay:${i * 0.05}s; background: white; box-shadow: 0 2px 10px rgba(11,42,107,0.06);`} role="listitem">
+          <button
+            class="accordion-btn w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+            aria-expanded="false"
+          >
+            <span class="font-body text-royal-deep text-sm font-medium leading-snug">{faq.q}</span>
+            <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: rgba(11,42,107,0.06);">
+              <svg class="accordion-icon w-4 h-4 text-royal flex-shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="px-6 pb-6 pt-1 border-t border-line/40">
+              <p class="font-body text-muted text-sm leading-relaxed pt-4">{faq.a}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Still have questions -->
+    <div class="reveal text-center mt-12">
+      <p class="font-body text-muted text-sm mb-4">Still have questions?</p>
+      <a
+        href="#contact"
+        class="btn-magnetic inline-flex items-center gap-2 bg-royal text-paper font-body text-sm font-medium px-7 py-3 rounded-sm tracking-wide transition-all duration-300 hover:bg-royal-light shadow-glass"
+      >
+        Contact Us Directly
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.accordion-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      const body = btn.nextElementSibling as HTMLElement;
+      const icon = btn.querySelector('.accordion-icon') as SVGElement;
+
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      body?.classList.toggle('open', !isOpen);
+      if (icon) icon.style.transform = !isOpen ? 'rotate(180deg)' : '';
+      const item = btn.closest('.faq-item') as HTMLElement;
+      if (item) item.style.borderLeftColor = !isOpen ? '#C7A663' : 'transparent';
+    });
+  });
+</script>

@@ -1,0 +1,79 @@
+---
+---
+<section id="trust" class="bg-ink border-y border-line/10" aria-label="Trust indicators">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-8 lg:py-10">
+
+    <!-- Stats row -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-line/15 mb-8">
+      <div class="text-center lg:px-8">
+        <div class="font-display font-medium text-4xl lg:text-5xl text-paper tracking-tight" data-counter="500" data-suffix="+">500+</div>
+        <div class="font-body text-muted text-xs tracking-widest mt-1 uppercase">Visas Supported</div>
+      </div>
+      <div class="text-center lg:px-8">
+        <div class="font-display font-medium text-4xl lg:text-5xl text-paper tracking-tight" data-counter="98" data-suffix="%">98%</div>
+        <div class="font-body text-muted text-xs tracking-widest mt-1 uppercase">Application Success</div>
+      </div>
+      <div class="text-center lg:px-8">
+        <div class="font-display font-medium text-4xl lg:text-5xl text-paper tracking-tight" data-counter="10" data-suffix="+">10+</div>
+        <div class="font-body text-muted text-xs tracking-widest mt-1 uppercase">Years Experience</div>
+      </div>
+      <div class="text-center lg:px-8">
+        <div class="font-display font-medium text-4xl lg:text-5xl text-paper tracking-tight" data-counter="50" data-suffix="+">50+</div>
+        <div class="font-body text-muted text-xs tracking-widest mt-1 uppercase">Nationalities Served</div>
+      </div>
+    </div>
+
+    <!-- Trust badges row -->
+    <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-3 pt-6 border-t border-line/10">
+      <span class="flex items-center gap-2 font-body text-muted text-xs tracking-[0.1em] uppercase">
+        <svg class="w-4 h-4 text-gold" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+        MARA Registered Agents
+      </span>
+      <span class="w-px h-4 bg-line/20 hidden sm:block" aria-hidden="true"></span>
+      <span class="font-body text-muted text-xs tracking-[0.1em] uppercase">Confidential &amp; Professional</span>
+      <span class="w-px h-4 bg-line/20 hidden sm:block" aria-hidden="true"></span>
+      <span class="font-body text-muted text-xs tracking-[0.1em] uppercase">ABN 96 695 178 744</span>
+      <span class="w-px h-4 bg-line/20 hidden sm:block" aria-hidden="true"></span>
+      <span class="font-body text-muted text-xs tracking-[0.1em] uppercase">Truganina · Victoria</span>
+    </div>
+
+    <!-- Disclaimer note -->
+    <p class="mt-4 text-center font-body text-muted/60 text-[10px] tracking-wide">
+      Past results are not an indication of future outcomes. All outcomes subject to eligibility and Department of Home Affairs requirements.
+    </p>
+  </div>
+</section>
+
+<script>
+  // Animated counters
+  const counters = document.querySelectorAll('[data-counter]');
+  const animateCounter = (el: Element) => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const target = parseInt(el.getAttribute('data-counter') || '0');
+    const suffix = el.getAttribute('data-suffix') || '';
+    let start = 0;
+    const duration = 1800;
+    const startTime = performance.now();
+
+    const update = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * target);
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+  };
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(c => counterObserver.observe(c));
+</script>

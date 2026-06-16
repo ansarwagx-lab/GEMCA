@@ -1,0 +1,111 @@
+---
+const services = [
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>`,
+    title: 'Student Visa Services',
+    subclass: 'Subclass 500',
+    desc: 'University, TAFE and college placement. GTE statement support, institution selection, and enrolment coordination — setting you up for academic success in Australia.',
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>`,
+    title: 'Skilled Migration',
+    subclass: 'Subclass 189 / 190 / 491',
+    desc: 'Points-tested skilled visas. We handle points assessment, EOI strategy, skills assessment guidance, and state or territory nomination for your pathway to permanent residence.',
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>`,
+    title: 'Employer Sponsored',
+    subclass: 'Subclass 482 / 186',
+    desc: 'Temporary Skills Shortage (TSS) and Employer Nomination Scheme (ENS) support. We assist both sponsoring employers and nominated workers through the full compliance journey.',
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>`,
+    title: 'Partner & Family Visas',
+    subclass: 'Subclass 820/801 · 309/100',
+    desc: 'Offshore and onshore partner visa applications, parent visas, and family reunion. We prepare your relationship evidence with care and precision.',
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>`,
+    title: 'Visitor Visa',
+    subclass: 'Subclass 600',
+    desc: 'Tourist, family visit, and business visitor visas. ETA and eVisitor guidance. Clear advice on conditions, duration, and how to strengthen your application.',
+  },
+  {
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>`,
+    title: 'Visa Appeals & Reviews',
+    subclass: 'AAT · Ministerial Intervention',
+    desc: 'Refusal is not the end. We prepare thorough AAT appeal submissions, Ministerial Intervention requests, and strategic responses to refusal decisions.',
+  },
+];
+---
+
+<section id="services" class="py-24 lg:py-32 bg-royal-deep relative overflow-hidden" aria-labelledby="services-heading">
+  <!-- Subtle grid texture -->
+  <div class="absolute inset-0 opacity-[0.03]" aria-hidden="true" style="background-image: linear-gradient(rgba(201,208,219,1) 1px, transparent 1px), linear-gradient(90deg, rgba(201,208,219,1) 1px, transparent 1px); background-size: 48px 48px;"></div>
+  <!-- Ambient glow -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] pointer-events-none" aria-hidden="true" style="background: radial-gradient(ellipse, rgba(199,166,99,0.06) 0%, transparent 65%);"></div>
+  <!-- Gold top accent -->
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
+
+    <!-- Section header -->
+    <div class="reveal text-center mb-16">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <span class="gold-hairline-h w-10"></span>
+        <span class="font-body text-gold text-xs tracking-[0.18em] uppercase">What We Do</span>
+        <span class="gold-hairline-h w-10"></span>
+      </div>
+      <h2 id="services-heading" class="font-display font-medium text-paper text-3xl lg:text-5xl tracking-tight mb-4">
+        Comprehensive Migration<br class="hidden lg:block"/> &amp; Education Services
+      </h2>
+      <p class="font-body text-platinum/60 text-base max-w-xl mx-auto leading-relaxed">
+        End-to-end guidance through every Australian visa pathway — handled by a registered agent, not a call centre.
+      </p>
+    </div>
+
+    <!-- Services grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {services.map((s, i) => (
+        <article
+          class="reveal glass-card sheen-card rounded-sm p-7 group cursor-default border-l-[3px] border-gold/50 hover:border-gold transition-all duration-300 hover:-translate-y-1"
+          style={`transition-delay:${i * 0.07}s`}
+          aria-label={s.title}
+        >
+          <!-- Icon -->
+          <div class="mb-5">
+            <div class="w-12 h-12 rounded-sm flex items-center justify-center" style="background: rgba(199,166,99,0.12);">
+              <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" set:html={s.icon}/>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="mb-3">
+            <span class="inline-block font-body text-[10px] tracking-[0.14em] uppercase mb-2 px-2 py-0.5 rounded" style="color:#C7A663; background: rgba(199,166,99,0.12);">{s.subclass}</span>
+            <h3 class="font-display font-medium text-paper text-lg tracking-tight mt-1">{s.title}</h3>
+          </div>
+          <p class="font-body text-platinum/60 text-sm leading-relaxed">{s.desc}</p>
+
+          <!-- Hover arrow -->
+          <div class="mt-5 flex items-center gap-2 text-gold text-xs font-body font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span>Learn more</span>
+            <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- CTA below grid -->
+    <div class="reveal text-center mt-12">
+      <p class="font-body text-platinum/50 text-sm mb-5">Not sure which pathway applies to you?</p>
+      <a
+        href="#contact"
+        class="btn-magnetic inline-flex items-center gap-2 font-body text-sm font-medium px-7 py-3 rounded-sm tracking-wide transition-all duration-300 hover:-translate-y-0.5"
+        style="background: rgba(199,166,99,0.15); color: #C7A663; border: 1px solid rgba(199,166,99,0.3);"
+      >
+        Speak to an Agent
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
