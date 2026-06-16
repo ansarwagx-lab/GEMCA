@@ -53,8 +53,10 @@ const categories = [
 ];
 ---
 
-<section id="visas" class="py-24 lg:py-32 bg-paper" aria-labelledby="visas-heading" style="background: linear-gradient(180deg, #fff 0%, #F5F6F9 100%)"  >
-  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+<section id="visas" class="py-24 lg:py-32 relative overflow-hidden" aria-labelledby="visas-heading" style="background: linear-gradient(160deg, #EBF0FA 0%, #F3F5FB 50%, #E8EDF8 100%);">
+  <div class="absolute top-0 right-0 w-96 h-96 pointer-events-none" aria-hidden="true" style="background: radial-gradient(ellipse at top right, rgba(11,42,107,0.07) 0%, transparent 60%);"></div>
+  <div class="absolute bottom-0 left-0 w-80 h-80 pointer-events-none" aria-hidden="true" style="background: radial-gradient(ellipse at bottom left, rgba(199,166,99,0.07) 0%, transparent 60%);"></div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
 
     <!-- Section header -->
     <div class="reveal text-center mb-14">
@@ -97,12 +99,12 @@ const categories = [
           class={`visa-panel grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 ${i !== 0 ? 'hidden' : ''}`}
         >
           {cat.visas.map(v => (
-            <div class="glass-card-light rounded-sm p-5 group sheen-card">
+            <div class="rounded-sm p-5 group border border-royal/15 hover:border-royal/40 hover:-translate-y-0.5 transition-all duration-300" style="background: rgba(255,255,255,0.85); box-shadow: 0 2px 12px rgba(11,42,107,0.07);">
               <div class="flex items-start justify-between mb-3">
-                <span class="inline-block font-display font-medium text-royal text-lg tracking-tight">{v.code}</span>
-                <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 flex-shrink-0"></span>
+                <span class="inline-block font-display font-medium text-royal text-xl tracking-tight">{v.code}</span>
+                <span class="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style="background: #C7A663;"></span>
               </div>
-              <h3 class="font-body text-ink text-sm font-medium mb-2">{v.name}</h3>
+              <h3 class="font-body text-royal-deep text-sm font-medium mb-2">{v.name}</h3>
               <p class="font-body text-muted text-xs leading-relaxed">{v.desc}</p>
             </div>
           ))}

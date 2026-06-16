@@ -24,8 +24,9 @@ const articles = [
 ];
 ---
 
-<section id="insights" class="py-24 lg:py-32" aria-labelledby="insights-heading" style="background: linear-gradient(180deg, #f8f9fc 0%, #ffffff 100%)">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+<section id="insights" class="py-24 lg:py-32 relative overflow-hidden" aria-labelledby="insights-heading" style="background: linear-gradient(160deg, #EBF0FA 0%, #F3F5FB 50%, #E8EDF8 100%);">
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" aria-hidden="true"></div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 relative z-10">
 
     <!-- Header -->
     <div class="reveal flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
@@ -47,12 +48,21 @@ const articles = [
     <!-- Article cards -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
       {articles.map((a, i) => (
-        <article class="reveal glass-card-light sheen-card rounded-sm overflow-hidden group border border-transparent hover:border-royal/20 transition-all duration-200" style={`transition-delay:${i * 0.1}s`}>
-          <!-- Placeholder image area -->
-          <div class="h-44 bg-gradient-to-br from-royal/5 via-royal/10 to-royal/5 flex items-center justify-center relative overflow-hidden">
-            <svg class="w-16 h-16 opacity-10 text-royal" aria-hidden="true"><use href="#mark-solid"/></svg>
-            <!-- Tag -->
-            <span class="absolute top-4 left-4 font-body text-[10px] tracking-[0.14em] uppercase text-royal bg-royal/10 px-2.5 py-1 rounded-sm">{a.tag}</span>
+        <article class="reveal rounded-sm overflow-hidden group border border-line/50 hover:border-royal/30 hover:-translate-y-1 transition-all duration-300" style={`transition-delay:${i * 0.1}s; background: white; box-shadow: 0 4px 20px rgba(11,42,107,0.08);`}>
+          <!-- Article image area — rich gradient -->
+          <div class="h-48 relative overflow-hidden flex items-end" style={`background: linear-gradient(135deg, #05143a 0%, #0B2A6B 60%, #1a3a8f 100%);`}>
+            <!-- Background pattern -->
+            <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(rgba(201,208,219,1) 1px, transparent 1px), linear-gradient(90deg, rgba(201,208,219,1) 1px, transparent 1px); background-size: 32px 32px;"></div>
+            <!-- Large decorative G -->
+            <div class="absolute right-4 top-1/2 -translate-y-1/2 opacity-[0.07]">
+              <svg class="w-32 h-32 text-white" aria-hidden="true"><use href="#mark-solid"/></svg>
+            </div>
+            <!-- Gold accent line -->
+            <div class="absolute top-0 left-0 right-0 h-[3px]" style="background: linear-gradient(90deg, transparent, #C7A663 30%, #C7A663 70%, transparent);"></div>
+            <!-- Tag + category -->
+            <div class="relative z-10 p-5 w-full">
+              <span class="inline-block font-body text-[10px] tracking-[0.16em] uppercase px-2.5 py-1 rounded-sm mb-2" style="color:#C7A663; background: rgba(199,166,99,0.18);">{a.tag}</span>
+            </div>
           </div>
 
           <!-- Content -->
