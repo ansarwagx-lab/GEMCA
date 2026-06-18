@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  GEMCA Primary Brand Mark
+  Icon: Geometric G constructed from 5 rectangular bars (rx=1 for premium finish)
+  Inner shelf accent in steel blue #2E6FD8 — the brand's signature visual detail
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 96" width="520" height="96" role="img" aria-label="GEMCA">
+  <rect width="520" height="96" fill="#FFFFFF"/>
+
+  <!-- ── G ICON MARK (48×48, centered vertically at y=24) ── -->
+  <g transform="translate(28,24)" fill="#0B1E3E">
+    <!-- Left vertical bar -->
+    <rect x="4"  y="4"  width="6" height="40" rx="1"/>
+    <!-- Top horizontal bar -->
+    <rect x="4"  y="4"  width="40" height="6" rx="1"/>
+    <!-- Bottom horizontal bar -->
+    <rect x="4"  y="38" width="40" height="6" rx="1"/>
+    <!-- Upper-right vertical bar (upper half only — creates the G opening below) -->
+    <rect x="38" y="4"  width="6" height="20" rx="1"/>
+    <!-- Inner horizontal shelf — rendered in accent blue (the brand accent) -->
+    <rect x="24" y="19" width="20" height="6" rx="1" fill="#2E6FD8"/>
+  </g>
+
+  <!-- Vertical separator -->
+  <line x1="100" y1="24" x2="100" y2="72"
+        stroke="#0B1E3E" stroke-width="1" opacity="0.2"/>
+
+  <!-- GEMCA wordmark -->
+  <text
+    x="116"
+    y="62"
+    style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+           font-size:46px;
+           font-weight:300;
+           letter-spacing:12px;
+           fill:#0B1E3E;
+           text-anchor:start;">GEMCA</text>
+</svg>

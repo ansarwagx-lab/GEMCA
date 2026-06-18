@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  GEMCA Monogram — G mark on white
+  Scaled to 160×160 drawing area in a 200×200 canvas
+  Proportionally identical to primary icon (4× scale)
+  Use as app icon, favicon source, or embossed mark
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="GEMCA Monogram">
+  <rect width="200" height="200" fill="#FFFFFF"/>
+
+  <!-- G Mark — 4× scale of the 40×40 primary icon -->
+  <g fill="#0B1E3E">
+    <!-- Left vertical bar -->
+    <rect x="20"  y="20"  width="24" height="160" rx="3"/>
+    <!-- Top horizontal bar -->
+    <rect x="20"  y="20"  width="160" height="24" rx="3"/>
+    <!-- Bottom horizontal bar -->
+    <rect x="20"  y="156" width="160" height="24" rx="3"/>
+    <!-- Upper-right vertical bar (top half only) -->
+    <rect x="156" y="20"  width="24" height="80"  rx="3"/>
+    <!-- Inner horizontal shelf — accent blue -->
+    <rect x="96"  y="76"  width="84" height="24"  rx="3" fill="#2E6FD8"/>
+  </g>
+</svg>

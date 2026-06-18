@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  GEMCA Institutional Mark
+  Bold, authoritative — suitable for legal headers, visa support materials,
+  official correspondence, and government-facing engagements.
+  Framed G emblem + bold wordmark + small-caps discipline line.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 130" width="580" height="130" role="img" aria-label="GEMCA Institutional">
+  <rect width="580" height="130" fill="#FFFFFF"/>
+
+  <!-- ── FRAMED G EMBLEM (64×64, centered vertically) ── -->
+  <g transform="translate(28,33)">
+
+    <!-- Outer frame — 3px border square -->
+    <rect x="0" y="0" width="64" height="64"
+          fill="none" stroke="#0B1E3E" stroke-width="3" rx="1"/>
+
+    <!-- G Mark inside — scaled to fit within frame (padding 10px each side → 44×44 draw area) -->
+    <g fill="#0B1E3E">
+      <!-- Left bar -->
+      <rect x="10" y="10" width="7"  height="44" rx="1"/>
+      <!-- Top bar -->
+      <rect x="10" y="10" width="44" height="7"  rx="1"/>
+      <!-- Bottom bar -->
+      <rect x="10" y="47" width="44" height="7"  rx="1"/>
+      <!-- Upper-right bar -->
+      <rect x="47" y="10" width="7"  height="22" rx="1"/>
+      <!-- Inner shelf — accent blue -->
+      <rect x="32" y="25" width="22" height="7"  rx="1" fill="#2E6FD8"/>
+    </g>
+  </g>
+
+  <!-- ── WORDMARK + TAGLINE ── -->
+  <!-- Primary wordmark — bold, authoritative -->
+  <text
+    x="118"
+    y="72"
+    style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+           font-size:50px;
+           font-weight:500;
+           letter-spacing:10px;
+           fill:#0B1E3E;
+           text-anchor:start;">GEMCA</text>
+
+  <!-- Discipline tagline — small caps, maximum austerity -->
+  <text
+    x="120"
+    y="96"
+    style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+           font-size:10px;
+           font-weight:400;
+           letter-spacing:3.5px;
+           fill:#0B1E3E;
+           opacity:0.55;
+           text-anchor:start;">ADVISORY · MIGRATION · CONSULTING</text>
+</svg>

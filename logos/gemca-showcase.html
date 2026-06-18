@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEMCA — Brand Identity System</title>
+  <style>
+    :root {
+      --navy:   #0B1E3E;
+      --blue:   #2E6FD8;
+      --black:  #0D0D0D;
+      --gray-1: #F4F5F7;
+      --gray-2: #E8E8EC;
+      --gray-3: #9A9FB0;
+      --text:   #1A1A2E;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: var(--gray-1);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    .page-header {
+      background: var(--navy);
+      padding: 56px 64px 48px;
+      border-bottom: 3px solid var(--blue);
+    }
+    .page-header h1 {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .page-header p {
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: 8px;
+      color: #fff;
+    }
+    .page-header .meta {
+      margin-top: 20px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.35);
+      font-weight: 400;
+    }
+
+    /* ── Layout ── */
+    .content { padding: 64px; max-width: 1100px; margin: 0 auto; }
+
+    .section {
+      margin-bottom: 72px;
+    }
+    .section-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      color: var(--gray-3);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--gray-2);
+    }
+
+    /* ── Logo cells ── */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .logo-grid.wide { grid-template-columns: 1fr; }
+    .logo-grid.two  { grid-template-columns: 1fr 1fr; }
+
+    .logo-cell {
+      border: 1px solid var(--gray-2);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .logo-cell.dark-bg {
+      background: var(--navy);
+      border-color: transparent;
+    }
+    .logo-cell.black-bg {
+      background: var(--black);
+      border-color: transparent;
+    }
+
+    .logo-frame {
+      padding: 48px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 160px;
+    }
+    .logo-frame img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    .logo-frame.icon-frame { min-height: 220px; }
+
+    .logo-meta {
+      padding: 16px 24px;
+      border-top: 1px solid var(--gray-2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-cell.dark-bg .logo-meta  { border-color: rgba(255,255,255,0.1); }
+    .logo-cell.black-bg .logo-meta { border-color: rgba(255,255,255,0.1); }
+
+    .logo-name {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--gray-3);
+      text-transform: uppercase;
+    }
+    .logo-cell.dark-bg  .logo-name { color: rgba(255,255,255,0.35); }
+    .logo-cell.black-bg .logo-name { color: rgba(255,255,255,0.35); }
+
+    .logo-file {
+      font-size: 10px;
+      color: var(--blue);
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      font-family: 'SF Mono', 'Consolas', monospace;
+    }
+
+    /* ── Colour chips ── */
+    .palette {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .chip {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      background: #fff;
+      border: 1px solid var(--gray-2);
+      border-radius: 4px;
+      flex: 1;
+      min-width: 180px;
+    }
+    .swatch {
+      width: 40px;
+      height: 40px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .chip-info { line-height: 1.5; }
+    .chip-name { font-size: 11px; font-weight: 600; letter-spacing: 1px; color: var(--text); }
+    .chip-hex  { font-size: 10px; font-weight: 400; color: var(--gray-3); font-family: 'SF Mono','Consolas',monospace; }
+
+    /* ── Usage note ── */
+    .note {
+      font-size: 11px;
+      color: var(--gray-3);
+      letter-spacing: 0.5px;
+      line-height: 1.7;
+      padding: 20px 24px;
+      background: #fff;
+      border: 1px solid var(--gray-2);
+      border-radius: 4px;
+      margin-top: 16px;
+    }
+    .note strong { color: var(--navy); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <!-- ── Page Header ── -->
+  <div class="page-header">
+    <h1>Brand Identity</h1>
+    <p>GEMCA</p>
+    <div class="meta">ADVISORY · MIGRATION · CONSULTING · 2026</div>
+  </div>
+
+  <div class="content">
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 1 — PRIMARY LOGO
+    ════════════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-label">01 &nbsp; Primary Logo — Icon + Wordmark</div>
+      <div class="logo-grid wide">
+        <div class="logo-cell">
+          <div class="logo-frame" style="padding:56px 48px;">
+            <img src="gemca-primary.svg" alt="GEMCA Primary Logo">
+          </div>
+          <div class="logo-meta">
+            <span class="logo-name">Primary — Light</span>
+            <span class="logo-file">gemca-primary.svg</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 2 — WORDMARK VARIATIONS
+    ════════════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-label">02 &nbsp; Wordmark — Typographic Variations</div>
+      <div class="logo-grid">
+        <div class="logo-cell">
+          <div class="logo-frame">
+            <img src="gemca-wordmark.svg" alt="GEMCA Wordmark — Light">
+          </div>
+          <div class="logo-meta">
+            <span class="logo-name">Wordmark — Light</span>
+            <span class="logo-file">gemca-wordmark.svg</span>
+          </div>
+        </div>
+        <div class="logo-cell dark-bg">
+          <div class="logo-frame">
+            <img src="gemca-wordmark-white.svg" alt="GEMCA Wordmark — Dark">
+          </div>
+          <div class="logo-meta">
+            <span class="logo-name">Wordmark — Dark</span>
+            <span class="logo-file">gemca-wordmark-white.svg</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 3 — MONOGRAM / APP ICON
+    ════════════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-label">03 &nbsp; Monogram — G Symbol for App / Favicon Use</div>
+      <div class="logo-grid two">
+        <div class="logo-cell">
+          <div class="logo-frame icon-frame">
+            <img src="gemca-monogram.svg" alt="GEMCA Monogram — Light" style="width:160px;height:160px;">
+          </div>
+          <div class="logo-meta">
+            <span class="logo-name">Monogram — Light</span>
+            <span class="logo-file">gemca-monogram.svg</span>
+          </div>
+        </div>
+        <div class="logo-cell" style="background:var(--gray-1);">
+          <div class="logo-frame icon-frame">
+            <img src="gemca-monogram-inverse.svg" alt="GEMCA Monogram — Inverse" style="width:160px;height:160px;">
+          </div>
+          <div class="logo-meta">
+            <span class="logo-name">Monogram — Inverse</span>
+            <span class="logo-file">gemca-monogram-inverse.svg</span>
+          </div>
+        </div>
+      </div>
+      <div class="note">
+        <strong>Icon geometry:</strong> The G mark is constructed exclusively from rectangular bars (rx=1 for a precision-machined finish). Left vertical · Top horizontal · Bottom horizontal · Upper-right vertical · Inner horizontal shelf (accent blue). The "opening" at lower-right is the G's defining negative space. Scales cleanly to 16 × 16 px favicon at 2× density.
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 4 — SILICON VALLEY MINIMAL
+    ════════════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-label">04 &nbsp; Minimal — Silicon Valley / Product Style</div>
+      <div class="logo-grid wide">
+        <div class="logo-cell">
+          <div class="logo-frame" style="padding:0;">
+            <img src="gemca-minimal.svg" alt="GEMCA Minimal — Light &amp; Dark" style="width:100%;">
+          </div>
+          <div class="logo-meta">
+            <span class="logo-name">Minimal — Light + Dark</span>
+            <span class="logo-file">gemca-minimal.svg</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 5 — INSTITUTIONAL
+    ════════════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-label">05 &nbsp; Institutional — Finance / Government / Legal</div>
+      <div class="logo-grid wide">
+        <div class="logo-cell">
+          <div class="logo-frame" style="padding:48px 40px; justify-content:flex-start;">
+            <img src="gemca-institutional.svg" alt="GEMCA Institutional">
+          </div>
+          <div class="logo-meta">
+            <span class="logo-name">Institutional — Framed Emblem</span>
+            <span class="logo-file">gemca-institutional.svg</span>
+          </div>
+        </div>
+      </div>
+      <div class="note">
+        <strong>Use case:</strong> Letterhead, official correspondence, immigration documents, legal engagements, and any government-adjacent materials. The framed emblem conveys a stamp-like authority. Font weight Medium (500) vs. Light (300) for the primary wordmark asserts institutional confidence.
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 6 — COLOUR PALETTE
+    ════════════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-label">06 &nbsp; Colour System</div>
+      <div class="palette">
+        <div class="chip">
+          <div class="swatch" style="background:#0B1E3E;"></div>
+          <div class="chip-info">
+            <div class="chip-name">Deep Navy</div>
+            <div class="chip-hex">#0B1E3E &nbsp;·&nbsp; Primary</div>
+          </div>
+        </div>
+        <div class="chip">
+          <div class="swatch" style="background:#2E6FD8;"></div>
+          <div class="chip-info">
+            <div class="chip-name">Steel Blue</div>
+            <div class="chip-hex">#2E6FD8 &nbsp;·&nbsp; Accent</div>
+          </div>
+        </div>
+        <div class="chip">
+          <div class="swatch" style="background:#5B9EF0; border:1px solid var(--gray-2);"></div>
+          <div class="chip-info">
+            <div class="chip-name">Sky Blue</div>
+            <div class="chip-hex">#5B9EF0 &nbsp;·&nbsp; Inverse Accent</div>
+          </div>
+        </div>
+        <div class="chip">
+          <div class="swatch" style="background:#0D0D0D;"></div>
+          <div class="chip-info">
+            <div class="chip-name">Graphite</div>
+            <div class="chip-hex">#0D0D0D &nbsp;·&nbsp; Minimal / Print</div>
+          </div>
+        </div>
+        <div class="chip">
+          <div class="swatch" style="background:#FFFFFF; border:1px solid var(--gray-2);"></div>
+          <div class="chip-info">
+            <div class="chip-name">Pure White</div>
+            <div class="chip-hex">#FFFFFF &nbsp;·&nbsp; Inverse</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════
+         SECTION 7 — USAGE RULES
+    ════════════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-label">07 &nbsp; Usage Guidelines</div>
+      <div class="note">
+        <strong>Typography:</strong> 'Helvetica Neue' (Light 300 for primary wordmark, Medium 500 for institutional). Tracking 12–14px on the 50px wordmark. For digital, Inter (Google Fonts) is an approved substitute.<br><br>
+        <strong>Clear space:</strong> Maintain minimum clearance of 1× the cap-height of GEMCA on all four sides of any logo variant.<br><br>
+        <strong>Minimum size:</strong> Primary logo — 160px wide. Wordmark alone — 120px wide. Monogram — 24px (retina) / 48px (standard).<br><br>
+        <strong>Forbidden:</strong> Do not rotate, recolour outside the approved palette, apply drop shadows, stretch, or place on low-contrast backgrounds. The accent blue inner bar is the only approved two-colour element — do not add further colours.<br><br>
+        <strong>Figma:</strong> All elements are pure SVG paths/rects — import and detach to edit. Convert text to outlines before final export. Grid spacing: 8pt base grid.
+      </div>
+    </div>
+
+  </div><!-- /content -->
+</body>
+</html>

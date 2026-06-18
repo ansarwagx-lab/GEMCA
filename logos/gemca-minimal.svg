@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  GEMCA — Ultra-Minimal Silicon Valley Style
+  Pure wordmark. No icon, no rules, no decoration.
+  Inspired by Stripe / Notion / Linear — typographic precision only.
+  Includes light and dark (inverse) versions stacked.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 240" width="520" height="240" role="img" aria-label="GEMCA — Minimal Wordmark">
+
+  <!-- ── LIGHT VERSION (top half) ── -->
+  <rect y="0" width="520" height="120" fill="#FFFFFF"/>
+
+  <text
+    x="260"
+    y="74"
+    style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+           font-size:54px;
+           font-weight:400;
+           letter-spacing:10px;
+           fill:#0D0D0D;
+           text-anchor:middle;">GEMCA</text>
+
+  <!-- Section divider (hairline) -->
+  <rect y="119" width="520" height="1" fill="#E8E8E8"/>
+
+  <!-- ── DARK VERSION (bottom half) ── -->
+  <rect y="120" width="520" height="120" fill="#0D0D0D"/>
+
+  <text
+    x="260"
+    y="194"
+    style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+           font-size:54px;
+           font-weight:400;
+           letter-spacing:10px;
+           fill:#FFFFFF;
+           text-anchor:middle;">GEMCA</text>
+
+  <!-- Version labels -->
+  <text x="28" y="110"
+    style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:9px;font-weight:500;letter-spacing:2px;fill:#0D0D0D;opacity:0.3;">
+    LIGHT
+  </text>
+  <text x="28" y="230"
+    style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:9px;font-weight:500;letter-spacing:2px;fill:#FFFFFF;opacity:0.3;">
+    DARK
+  </text>
+</svg>

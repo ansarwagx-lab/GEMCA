@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 100" width="520" height="100" role="img" aria-label="GEMCA">
+  <rect width="520" height="100" fill="#0B1E3E"/>
+
+  <!-- GEMCA wordmark — white on navy -->
+  <text
+    x="260"
+    y="63"
+    style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+           font-size:52px;
+           font-weight:300;
+           letter-spacing:14px;
+           fill:#FFFFFF;
+           text-anchor:middle;">GEMCA</text>
+
+  <!-- Precision baseline rule -->
+  <rect x="118" y="76" width="284" height="0.8" fill="#FFFFFF" opacity="0.25"/>
+</svg>
